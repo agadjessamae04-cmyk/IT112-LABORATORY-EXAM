@@ -1,0 +1,33 @@
+#include <stdio.h>
+int main() {
+    int age, score, documents;
+
+    printf("Enter applicant's age: ");
+    scanf("%d", &age);
+
+    printf("Enter entrance examination score: ");
+    scanf("%d", &score);
+
+    printf("Are the required documents complete? (1 = Yes, 0 = No): ");
+    scanf("%d", &documents);
+
+    if (age >= 17 && score >= 75 && documents == 1) {
+        printf("\nApplicant is QUALIFIED for enrollment.\n");
+    } else {
+        printf("\nApplicant is NOT QUALIFIED for enrollment.\n");
+
+        if (age < 17) {
+            printf("- Applicant must be at least 17 years old.\n");
+        }
+
+        if (score < 75) {
+            printf("- Entrance examination score must be at least 75.\n");
+        }
+
+        if (documents != 1) {
+            printf("- Required documents are incomplete.\n");
+        }
+    }
+
+    return 0;
+}
